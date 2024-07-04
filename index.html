@@ -13,27 +13,19 @@
     <style>
       #myProgress {
         width: 100%;
-        background-color: #ddd;
+        background-color: #ffd078;
       }
 
       #myBar {
         width: 1%;
-        height: 30px;
-        background-color: #04AA6D;
+        height: 10px;
+        background-color: #ff6a00;
       }
     </style>
 
   </head>
   <body>
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js"></script>
-
-    <p id="demo"></p>
-    <script>
-      let x = Math.random() * 100;
-      document.getElementById("demo").innerHTML = x;
-      move(x);
-    </script>
-
     <script>
       const eraWidget = new EraWidget();
       eraWidget.onValues((values) => {
@@ -60,55 +52,23 @@
         document.getElementById("humi").innerHTML = humi2;
       })
       eraWidget.ready();
-      // function move(x) {
-      //   var elem = document.getElementById("myBar");
-      //   elem.style.width = x + "%";
-      // }
     </script>
 
     <div class="lable">
       <div class="frame"><div class="text-wrapper">Nhiệt độ</div></div>
       <div class="div"><div class="element-unit"><span id="temp"></span><span style="font-family: Arial; font-size: 40;">°C</span></div></div>
-      <!-- <div class="group-wrapper"><div class="group"></div></div> -->
-
-      <!-- <div style="width: 100%; height: 100%; padding: 2px; background: #4F4F4F; border-radius: 20px; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="width: 100%; align-self: stretch; background: #429264; border-radius: 20px; justify-content: flex-start; align-items: center; gap: 95%; display: flex">
-            <div style="width: 9px; height: 6px; background: #429264; border-radius: 8px"></div>
-            <div style="width: 40px; align-self: stretch; background: #2CFF85; border-radius: 20px"></div>
-        </div>
-    </div> -->
-
     <div id="myProgress">
       <div id="myBar"></div>
     </div>
-    
-    <br>
-    <button onclick="move(90)">Click Me</button> 
     <script>
-      // var i = 0;
       function move(abc) {
         console.log("fadsadas")
         console.log('abc value', abc);
         let prof = Math.random() * 100;
-        // if (i == 0) {
-        //   i = 1;
           var elem = document.getElementById("myBar");
-          // var width = 1;
-          // var id = setInterval(frame, 10);
-          // function frame() {
-            // if (width >= 100) {
-              // clearInterval(id);
-              // i = 0;
-            // } else {
-              // width++;
-              elem.style.width = abc + "%";
-            // }
-          // }
+          elem.style.width = abc + "%";
         }
-      // }
-      </script>
-
-      
+      </script>    
     </div>
 
   </body>
