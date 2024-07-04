@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>E-Ra Arduino Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styleguide.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js"></script>
+    <script>
+      const eraWidget = new EraWidget();
+      eraWidget.onValues((values) => {
+        onConfiguration: (configuration) => {
+          onValues: (value) => {
+            var temp = values
+            console.log('value temp hua', temp);
+          }
+        }
+        console.log('aaaadsadsa', values, values[1040]?.value);
+        var abc = values[1040]?.value;
+        document.getElementById("temp").innerHTML = abc;
+        });
+
+      eraWidget.onValues((values) => {
+        onConfiguration: (configuration) => {
+          onValues: (value) => {
+            var humi = value
+            console.log('value humi is', humi);
+          }
+        }
+        var humi2 = values[1041]?.value;
+        document.getElementById("humi").innerHTML = humi2;
+      })
+      eraWidget.ready()
+    </script>
     <div class="lable">
       <div class="frame"><div class="text-wrapper">Nhiệt độ</div></div>
-      <div class="div"><div class="element-unit">23.65 °C</div></div>
+      <div class="div"><div class="element-unit"><span id="temp"></span><span style="font-family: Arial; font-size: 35;">°C</span></div></div>
       <div class="group-wrapper"><div class="group"></div></div>
     </div>
   </body>
