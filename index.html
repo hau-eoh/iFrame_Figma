@@ -35,22 +35,10 @@
             console.log('value temp hua', temp);
           }
         }
-        console.log('aaaadsadsa', values, values[1040]?.value);
-        var abc = values[1040]?.value;
+        var abc = values[1126]?.value;
         move(abc);
         document.getElementById("temp").innerHTML = abc;
         });
-
-      eraWidget.onValues((values) => {
-        onConfiguration: (configuration) => {
-          onValues: (value) => {
-            var humi = value
-            console.log('value humi is', humi);
-          }
-        }
-        var humi2 = values[1041]?.value;
-        document.getElementById("humi").innerHTML = humi2;
-      })
       eraWidget.ready();
     </script>
 
@@ -62,9 +50,6 @@
     </div>
     <script>
       function move(abc) {
-        console.log("fadsadas")
-        console.log('abc value', abc);
-        let prof = Math.random() * 100;
           var elem = document.getElementById("myBar");
           elem.style.width = abc + "%";
         }
