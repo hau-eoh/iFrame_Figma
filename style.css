@@ -1,7 +1,8 @@
 .lable {
   display: flex;
   flex-direction: column;
-  width: 343px;
+  width: auto;
+  height: auto;
   align-items: flex-start;
   justify-content: center;
   gap: 10px;
