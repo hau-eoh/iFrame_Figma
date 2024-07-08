@@ -35,6 +35,7 @@
       })
       eraWidget.onValues((values) => {
         var temp_value = values[config.id].value;
+        move(temp_value);
         document.getElementById('value_1').innerHTML = temp_value;
       });
       eraWidget.ready();
