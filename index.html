@@ -19,32 +19,30 @@
       #myBar {
         width: 1%;
         height: 10px;
-        background-color: #ff6a00;
+        background-color: linear-gradient(to right, #00ff00 00%, #ff0000 100%);
       }
     </style>
 
   </head>
   <body>
     <script src="https://www.unpkg.com/@eohjsc/era-widget@1.0.14/src/index.js"></script>
+
     <script>
       const eraWidget = new EraWidget();
+      let config = null;
+      eraWidget.onConfiguration((configuration) => {
+        config = configuration.realtime_configs[0];
+      })
       eraWidget.onValues((values) => {
-        onConfiguration: (configuration) => {
-          onValues: (value) => {
-            var temp = values
-            console.log('value temp hua', temp);
-          }
-        }
-        var abc = values[1126]?.value;
-        move(abc);
-        document.getElementById("temp").innerHTML = abc;
-        });
+        var temp_value = values[config.id].value;
+        document.getElementById('value_1').innerHTML = temp_value;
+      });
       eraWidget.ready();
     </script>
 
     <div class="lable">
       <div class="frame"><div class="text-wrapper">Nhiệt độ</div></div>
-      <div class="div"><div class="element-unit"><span id="temp"></span><span style="font-family: Arial; font-size: 40;">°C</span></div></div>
+      <div class="div"><div class="element-unit"><span id="value_1"></span><span style="font-family: Arial; font-size: 40;">°C</span></div></div>
     <div id="myProgress">
       <div id="myBar"></div>
     </div>
