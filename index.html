@@ -25,7 +25,8 @@
       #myBar {
         width: 1%;
         height: 10px;
-        background-color: linear-gradient(to right, #00ff00 00%, #ff0000 100%);
+        background-color: rgb(255, 136, 0);
+        /* background-color: linear-gradient(to right, #00ff00 00%, #ff0000 100%); */
       }
     </style>
   </head>
@@ -58,10 +59,9 @@
         <div id="myBar"></div>
       </div>
       <script>
-        function move(abc) {
-          console.log('value move bar is:  ', abc);
+        function move(temp_value) {
           var elem = document.getElementById("myBar");
-          elem.style.width = abc + "%";
+          elem.style.width = temp_value + "%";
         }
       </script>
     </div>
