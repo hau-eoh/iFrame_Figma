@@ -19,7 +19,7 @@
     <style>
       #myProgress {
         width: 100%;
-        background-color: #ffffff;
+        background-color: #f5f5f5;
       }
 
       #myBar {
@@ -59,6 +59,7 @@
       </div>
       <script>
         function move(abc) {
+          console.log('value move bar is:  ', abc);
           var elem = document.getElementById("myBar");
           elem.style.width = abc + "%";
         }
